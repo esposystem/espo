@@ -1,0 +1,3 @@
+<?
+echo "otro archivo";
+?>
