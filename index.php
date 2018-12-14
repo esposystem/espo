@@ -1,3 +1,3 @@
 <?
-echo "otro archivo";
+echo "otro archivoo";
 ?>
