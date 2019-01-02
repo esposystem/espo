@@ -1,0 +1,175 @@
+<?php
+
+namespace Lib;
+
+class APPUtil
+{
+	
+	public static  $antiInjectionStr;
+	/*
+	function varsLOG( $frm , $usuario , $table , $key , $id , $do )
+	{
+		$usuario = SIMUser::get("Nombre");
+		$table = SIMReg::get("table");
+		$key = SIMReg::get("key");
+		$id = SIMNet::reqInt("id");
+		$do = SIMNet::get( "action" );
+		
+		
+		$dbo =& SIMDB::get();
+		$qry = $dbo->query( "SELECT UsuarioTrCr , FechaTrCr , UsuarioTrEd , FechaTrEd FROM " . $table . " WHERE " . $key . " = '" . $id . "'" );
+		$r = $dbo->object( $qry );
+		
+		$now = date( "Y-m-j h:i:s" );
+		
+		if( $do == "edit" )
+		{
+			$frm['UsuarioTrEd'] = $usuario;
+			$frm['FechaTrEd'] = $now;
+			$frm['UsuarioTrCr'] = $r->UsuarioTrCr;
+			$frm['FechaTrCr'] = $r->FechaTrCr;	
+		}
+		else
+		{
+			$frm['UsuarioTrCr'] = $usuario;
+			$frm['FechaTrCr'] = $now;
+			$frm['UsuarioTrEd'] = $r->UsuarioTrEd;
+			$frm['FechaTrEd'] = $r->FechaTrEd;
+		}
+		
+		return $frm;
+	}
+	*/
+	
+	static function validate( $frm , $arr_valida )
+	{
+		//echo "UTIL validate";
+		
+		$errorMsg = "";
+		$errorList = array();
+		$arrayFields = $arr_valida;
+	
+		foreach( $arrayFields as $field => $text)
+		{
+			
+			$value = $frm[ $field ];
+	
+			if ( trim( $frm[ $field ] ) == "" )
+				$errorList[] = array( "field" => $field, "value" => $value , "msg" => $text );
+		}
+				
+		if( count( $errorList ) > 0 )
+		{
+			$mess = "Debe Ingresar  : ";
+			
+			foreach( $errorList as $item ) 
+				$mess .= " " . $item['msg'] . " ";
+			
+			$mess .= " <br>Por favor corrija e intente de nuevo. ";
+			
+			$result["success"] = false;
+			$result["msg"] = $mess;
+			
+			return $result;
+		}
+		else
+			$result["success"] = true;
+		
+		return $result;
+	
+	}
+	
+	static function filterFromJson($filterRules){
+		
+		$filter = '';
+		
+		
+
+		  $filterRules = json_decode($filterRules,true);
+      	
+
+		 if(is_array($filterRules)){
+			foreach($filterRules as $rule){
+			       if (!empty($rule['value'])){
+					
+					switch ($rule['op']){
+						case 'equal' :
+							 $cond[] = "(t.".$rule['field']." = '".$rule['value']."' )";
+						break;
+						case 'contains' :
+							$cond[] = " (t.".$rule['field']." like '%".$rule['value']."%')";
+						break;
+						case 'beginwith' :
+							$cond[] = " (t.".$rule['field']." like '".$rule['value']."%')";
+						break;
+						case 'endwith' :
+							$cond[] = " (t.".$rule['field']." like '%".$rule['value']."')";
+						break;
+						case 'less' :
+							 $cond[] = "(t.".$rule['field']." < ".$rule['value']." )";
+						break;
+						case 'lessorequal' :
+							 $cond[] = "(t.".$rule['field']." <= ".$rule['value']." )";
+						break;
+						case 'greaterorequal' :
+							 $cond[] = "(t.".$rule['field']." >= ".$rule['value']." )";
+						break;
+						case 'greater' :
+							 $cond[] = "(t.".$rule['field']." > ".$rule['value']." )";
+						break;
+						case 'notequal' :
+							 $cond[] = "(t.".$rule['field']." <> ".$rule['value']." )";
+						break;
+						case 'join' :
+							 $cond[] = "(t.".$rule['param']." = '".$rule['value']."' )";
+						break;
+				
+					}
+				       
+			       }
+		       }
+		       if(!empty($cond))
+			       $filter = implode(" AND ",$cond);
+		}
+		
+		return $filter;
+		
+	}
+	
+	public static function antiInjection($str) {
+		// $banchars = array ("*",";", "--","\n","\r");
+	         $banchars = array ("*", "--","\n","\r");
+	        
+		//$banwords = array ("key_column_usage","UNION"," or "," OR "," Or "," oR "," and ", " AND "," aNd "," aND "," AnD ","group_concat","table_name");
+	        $banwords = array ("key_column_usage","UNION","group_concat","table_name");
+	      //  if ( eregi ( "[a-zA-Z0-9]+", $str ) ) {
+		if(preg_match('/'."[a-zA-Z0-9]+".'/i',$str)) {	
+	                $str = str_ireplace ( $banchars, '', ( $str ) );
+	                $str = str_ireplace ( $banwords, '', ( $str ) );
+	        } else {
+	                $str = NULL;
+	        }
+	        $str = trim($str);
+	        $str = strip_tags($str);
+	        $str = stripslashes($str);
+	        $str = addslashes($str);
+	        $str = htmlspecialchars($str);
+	
+		return $str;
+	
+	}
+	
+	public static function cache( $type = "text/html" )
+	{
+		header( "Content-type: " . $type );
+		header( "Expires: Mon, 26 Jul 1997 05:00:00 GMT" );             
+		header( "Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT" ); 
+		header( "Cache-Control: no-cache, must-revalidate" );           
+		header( "Pragma: no-cache" );
+		return true;                                   
+	}
+	
+	
+/*END */
+}
+?>

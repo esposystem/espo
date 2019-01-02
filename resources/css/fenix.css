@@ -1,0 +1,293 @@
+.c-label {
+    display: inline-block;
+    width: 350px;
+    font-weight: bold;
+}
+
+.content-tabla {
+    width: 100%;
+}
+
+.datagrid-btable {
+    width: 100%;
+}
+
+.tabla {
+    width: 100%;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    background-color: #F7F7F7;
+    color: gray;
+    font-family: arial, verdana, times;
+    font-size: 12px;
+    border-bottom: 1px solid #ccc;
+}
+
+.tabla p {
+    clear: both;
+    width: 100%;
+    margin: 0;
+}
+
+.tabla .titulo {
+    padding: 2px;
+    background-color: #ddd;
+    font-family: arial, verdana, times;
+    float: left;
+    width: 100px;
+    border-right: 1px solid #ccc;
+    font-weight: bold;
+}
+
+.tabla .columna {
+    padding: 2px;
+    float: left;
+    width: 105px;
+    font-weight: bold;
+    width: 20%;
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+}
+
+.tabla .columnValor {
+    padding: 2px;
+    float: left;
+    width: 230px;
+    width: 27%;
+}
+
+.tabla .columnValor2 {
+    padding: 2px;
+    float: left;
+    width: 300px;
+    /*border-right: 1px solid #ccc;*/
+    width: 25%;
+}
+
+.txtBuscar {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #333;
+    font-weight: bold;
+    border-bottom: 1px solid #95B8E7;
+}
+
+
+/*** ESTILOS Jeasyui ******/
+
+.fitem {
+    margin-bottom: 5px;
+    float: left;
+}
+
+.fitem label {
+    display: inline-block;
+    width: 140px;
+}
+
+.fitem input {
+    display: inline-block;
+    min-width: 120px;
+    height: 17px !important;
+    line-height: 17px !important;
+}
+
+.fitem span {
+    display: inline-block;
+    width: 40%;
+    min-width: 120px;
+}
+
+.fitem_col2 {
+    margin-bottom: 5px;
+    float: left;
+    min-width: 270px;
+}
+
+.fitem_col2 label {
+    display: inline-block;
+    min-width: 140px;
+}
+
+.fitem_col2 input {
+    display: inline-block;
+    width: 90%;
+    min-width: 140px;
+    height: 17px !important;
+    line-height: 17px !important;
+}
+
+.fitem_col2 input[type='radio'] {
+    display: inline-block;
+    width: 20px;
+}
+
+.fitem_doubleRow {
+    margin-bottom: 5px;
+    float: left;
+    min-width: 160px;
+}
+
+.fitem_doubleRow span {
+    display: block;
+}
+
+.fitem_doubleRow label {
+    float: left;
+    min-width: 160px;
+}
+
+.fitem_doubleRow input {
+    display: inline-block;
+    width: 90%;
+}
+
+.fitem_doubleRow input[type='radio'] {
+    display: inline-block;
+    width: 20px;
+}
+
+.fitem_col3 {
+    margin-bottom: 5px;
+    float: left;
+    width: 30%;
+    min-width: 150px;
+}
+
+.fitem_col3 label {
+    float: left;
+    min-width: 185px;
+}
+
+.fitem_col3 input {
+    float: left;
+    width: 180px;
+    height: 17px !important;
+    line-height: 17px !important;
+}
+
+.fitem_col4 {
+    margin-bottom: 5px;
+    float: left;
+    width: 20%;
+    min-width: 180px;
+    border-bottom: 1px solid #D1EAED;
+}
+
+.fitem_col4 label {
+    float: left;
+    min-width: 80px;
+    font-weight: bold;
+}
+
+.fitem_col4 input {
+    float: left;
+    width: 90px;
+}
+
+.search_frm {
+    padding: 2px 2px 2px 18px;
+    margin-bottom: 2px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 98%;
+    background-color: #fff;
+}
+
+.search_frm input {
+    line-height: 22px;
+    border: 1px solid #ccc;
+    min-width: 140px;
+}
+
+.titulo_bloque {
+    font-size: 12px;
+    font-weight: bold;
+    color: #666;
+    padding: 5px 0;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+
+/*** PRUEBAS ****/
+
+#ver-zebra {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 12px;
+    /* margin: 45px; */
+    /* width: 480px; */
+    text-align: left;
+    /* border-collapse: collapse; */
+}
+
+#ver-zebra th {
+    /* font-size: 14px; */
+    font-weight: normal;
+    /* padding: 12px 15px; */
+    border-right: 1px solid #fff;
+    /* border-left: 1px solid #fff; */
+    color: #039;
+}
+
+#ver-zebra td {
+    padding: 8px 15px;
+    border-right: 1px solid #fff;
+    border-left: 1px solid #fff;
+    color: #669;
+}
+
+.tbCss1 {
+    background: #FFFFFF;
+    color: #191970;
+    font-size: 11px;
+    padding: 2px;
+    line-height: 1.5em;
+    white-space: nowrap;
+}
+
+.hide{
+    display: none;
+}
+
+
+.tbHeader1 {
+    background: #AAAAFF;
+    color: #FFFFFF;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+.tbHeader1 td {
+    border-right: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.tbHeader1 th {
+    padding: 1px 6px 1px 3px;
+    border-right: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.tbSubHeader1 {
+    background: #CCCCFF;
+    color: #191970;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+.tbSubHeader1 td {
+    border-right: 1px solid #fff;
+    border-left: 1px solid #fff;
+    padding: 1px 6px 1px 3px;
+}
+
+.tbSubHeader2 {
+    background: #EBEBEB;
+    color: #191970;
+    font-size: 11px;
+    white-space: nowrap;
+}
