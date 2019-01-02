@@ -147,17 +147,12 @@ $router->map('/usuario/:action/', array('controller' => 'usuario','action' => 'd
 $router->map('/usuario/:action/:id', array('controller' => 'usuario','action' => 'update'), array('id' => '[\d]{1,8}')); // define filters for the url parameters
 
 
-/*__________________________________________________________*/
 
-//$router->map('/pt_documento/:action/', array('controller' => 'pt_documento','action' => 'list'));
-//$router->map('/pt_documento/:action/:id', array('controller' => 'pt_documento','action' => 'valida'), array('id' => '[\d]{1,8}'));
 
 /*__________________________________________________________*/
 $router->map('/si_log/:action/', array('controller' => 'si_log','action' => 'list')); 
 $router->map('/si_log/:action/:id', array('controller' => 'si_log','action' => 'update'), array('id' => '[\d]{1,8}'));
 
-//$router->map('/si_db/:action/', array('controller' => 'si_db','action' => 'list')); 
-//$router->map('/si_db/:action/:id', array('controller' => 'si_db','action' => 'update'), array('id' => '[\d]{1,8}'));
 
 /*__________________________________________________________*/
 /*__________________________________________________________*/
