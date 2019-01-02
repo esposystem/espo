@@ -117,8 +117,7 @@ class APPDbo
 				'CharacterSet'=>'UTF-8');
 
 
-			print_r($paramConn);
-			exit;
+			
 				
 			if(!$this->CONNECTION = sqlsrv_connect($this->DBHOST, $paramConn)){
 				echo "ERROR DE CONEXION ";
