@@ -107,6 +107,7 @@ class APPDbo
 			)
 			{
 				die('SQLSRV parametros de conexion no estan definidos correctamente');
+
 			}
 			$paramConn = array(
 				'UID' => $this->DBUSER,
@@ -114,6 +115,10 @@ class APPDbo
 				'Database' => $this->DBNAME,
 				'ReturnDatesAsStrings'=> true,
 				'CharacterSet'=>'UTF-8');
+
+
+			print_r($paramConn);
+			exit;
 				
 			if(!$this->CONNECTION = sqlsrv_connect($this->DBHOST, $paramConn)){
 				echo "ERROR DE CONEXION ";
